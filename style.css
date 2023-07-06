@@ -1,0 +1,97 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    45deg,
+    hsla(192, 68%, 41%, 1) 0%,
+    hsla(192, 68%, 41%, 1) 0%,
+    hsla(191, 78%, 68%, 1) 100%,
+    hsla(191, 78%, 68%, 1) 100%
+  );
+  display: grid;
+  place-items: center;
+}
+.game-info {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  padding: 0.3rem 3rem;
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  backdrop-filter: blur(7px);
+}
+.tic-tac-toe {
+  margin-top: 3rem;
+  width: 90%;
+  max-width: 20rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  aspect-ratio: 1/1;
+}
+.box{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    font-size: 3rem;
+    cursor: pointer;
+    color: white;
+    display: grid;
+    place-items: center;
+}
+.box1, .box2, .box4, .box5{
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+.box3, .box6{
+    border-bottom: 2px solid white;
+}
+.box7, .box8{
+    border-right: 2px solid white;
+}
+.btn{
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    padding: 0.5rem 2rem;
+    border-radius:1rem;
+    cursor: pointer;
+    backdrop-filter: blur(7px);
+    transition: all 150ms ease-in-out;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.btn.active{
+    opacity: 1;
+    pointer-events: all;
+}
+.win{
+    background-color: rgba(0,255,0, 0.3);
+}
+
+@media screen and (max-width: 400px) {
+  .game-info{
+    font-size: 3.9vw;
+  }
+}
